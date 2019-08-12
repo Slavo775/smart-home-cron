@@ -1,0 +1,13 @@
+{
+  "require": {
+    "twig/twig": "^2.0",
+    "ext-pdo": "*",
+    "ext-json": "*",
+    "guzzlehttp/psr7": "^1.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "smart_home\\cron\\": "/"
+    }
+  }
+}
