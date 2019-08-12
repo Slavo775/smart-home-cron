@@ -24,11 +24,9 @@ class cron_base
 
     public function executeQuery(string $query, array $params = []){
         $statement = $this->conn->prepare($query);
-        foreach($params as $key => $param){
-            $statement->bindParam(':'.$key, $param);
-        }
-        $statement->execute();
-        $result = $statement->fetchAll(2);
+        $statement->execute($params);
+        $arr = $statement->errorInfo();
+        $result = $statement->fetchAll();
         return $result;
     }
 
