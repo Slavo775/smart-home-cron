@@ -18,7 +18,7 @@ class cron_base
 
     public function __construct()
     {
-        $this->conn = new \PDO('mysql:host=127.0.0.1;port=8889;dbname=smart-home',
+        $this->conn = new \PDO('mysql:host=192.168.31.118;port=3306;dbname=smart-home',
             'root',
             'root',
             array(\PDO::ATTR_PERSISTENT => true));
