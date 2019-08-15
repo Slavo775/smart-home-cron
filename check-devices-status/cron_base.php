@@ -6,9 +6,12 @@
  * Time: 19:59
  */
 
+include 'env.php';
 
-class cron_base
+class cron_base extends env
 {
+
+    protected $environment;
     /**
      * @var PDO
      */
@@ -16,7 +19,8 @@ class cron_base
 
     public function __construct()
     {
-        $this->conn = new \PDO('mysql:host=127.0.0.1;port=8889;dbname=smart-home',
+
+        $this->conn = new \PDO('mysql:host='. env::database_url .';port='.env::database_port.';dbname=smart-home',
             'root',
             'root',
             array(\PDO::ATTR_PERSISTENT => true));

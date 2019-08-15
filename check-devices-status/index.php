@@ -7,15 +7,10 @@
  */
 
 include 'cron_base.php';
-
+require_once '../vendor/autoload.php';
 
 class run extends cron_base
 {
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
     public function getDevices()
     {
         $results = $this->executeQuery('SELECT ip, id_device FROM device');
