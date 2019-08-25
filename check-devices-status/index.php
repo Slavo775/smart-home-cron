@@ -43,7 +43,7 @@ class run extends cron_base
                 ];
                 $insert = $this->executeQuery('INSERT INTO status_log (status_type, status_time, id_device, status_code) VALUES (:status_type, NOW(), :id_device, :status_code)',$params);
             } catch (Exception $ex) {
-                $this->executeQuery('INSERT INTO status_log (status_type, status_time, id_device, message, status_code) VALUES (:status_type, :NOW(), :id_device, :status_code)',
+                $this->executeQuery('INSERT INTO status_log (status_type, status_time, id_device, message, status_code) VALUES (:status_type, NOW(), :id_device, :status_code)',
                     [
                         'status_type' => 1,
                         'id_device' => $result['id_device'],
