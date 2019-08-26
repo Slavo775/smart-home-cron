@@ -13,7 +13,7 @@ class run extends cron_base
 {
     public function getDevices()
     {
-        $results = $this->executeQuery('SELECT ip, id_device FROM device');
+        $results = $this->executeQuery('SELECT ip, id_device FROM device WHERE active=1');
         foreach ($results as $result) {
             try {
                 $ctx = stream_context_create(array(
